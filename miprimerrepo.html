@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Display CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: block;
+        }
+
+        article {
+            display: block;
+            background-color: #f4f4f4;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            clear: both;
+        }
+
+    </style>
+    <link id="css-link" rel="stylesheet" href="css/estilo1.css">
+</head>
+<body>
+    <div id="style-switcher">
+        <label>
+            <input type="radio" name="css" value="estilo1.css" checked>
+            Estilo 1
+        </label>
+        <label>
+            <input type="radio" name="css" value="estilo2.css">
+            Estilo 2
+        </label>
+        <label>
+            <input type="radio" name="css" value="estilo3.css">
+            Estilo 3
+        </label>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <header>
+            <h1>Título del Sitio</h1>
+        </header>
+        
+        <section>
+            <article>
+                <h2>Artículo 1</h2>
+                <p>Contenido del artículo 1...</p>
+            </article>
+            <article>
+                <h2>Artículo 2</h2>
+                <p>Contenido del artículo 2...</p>
+            </article>
+        </section>
+        
+        <section>
+            <h2>Encabezado Sección 1</h2>
+            <h2>Encabezado Sección 2</h2>
+            <h2>Encabezado Sección 3</h2>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Mi Sitio Web</p>
+    </footer>
+
+
+<!-- JavaScript para cambiar el archivo CSS -->
+<script>
+    document.querySelectorAll('input[name="css"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const selectedCSS = this.value;
+            document.getElementById('css-link').setAttribute('href', 'css/' + selectedCSS);
+        });
+    });
+</script>
+</body>
+</html>
